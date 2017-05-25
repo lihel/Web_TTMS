@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>云影剧院票务管理系统</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/slideStyle.css" rel="stylesheet">
+    <link href="../css/TTMS.css" rel="stylesheet">
+    <link href="../font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="imgTitle">
+    <img src="../images/yun.png">
+</div>
+<div class="login-button">
+    <a id="login" href="#"> 登录</a>
+    <i class="fa fa-user-circle"></i>
+</div>
+<div class="overCurtain"></div>
+
+<div class="hide-center">
+    <div id="formhead">
+        <div id="formhead-title">
+            User Login
+        </div>
+        <button type="button" id="close">X</button>
+    </div>
+    <div id="formbody">
+        <div class="loginUserName">
+            <input id="input-topright-loginInput" name="userName" class="loginInput" placeholder="userName"
+                   type="text"/>
+        </div>
+        <div class="loginPassword">
+            <input id="input-bottomright-loginInput" name="password" class="loginInput" placeholder="password"
+                   type="password" style="border-bottom-right-radius:5px;"/>
+        </div>
+        <div id="formfoot">
+            <button id="BSignIn" type="submit">Sign In</button>
+        </div>
+    </div>
+</div>
+
+<div class="nav">
+
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="saleTickets.html">售票</a></li>
+        <li><a href="studio.html">管理剧院</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+    </ul>
+
+</div>
+
+<div id="text">
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="../js/jquery-slideShow.js"></script>
+<script src="../js/load.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    var image = ["../images/1.png", "../images/2.png", "../images/3.png", "../images/4.png"];
+    var href = ["https://www.baidu.com", "http://www.jq22.com"];
+    $("#text").slide({
+        images: image,
+        autoPlay: true,
+        href: href,
+        hiddenBar: true,
+        height: 350,
+        interval: 6000
+    });
+</script>
+<h2>正在热映</h2>
+<h2>
+    ----------------------------------------------------------------------------------------------------------------------</h2>
+<div class="row">
+    <div class="image col-md-3">
+        <img src="../images/1.jpg" class="photo img-rounded">
+        <div class="ticket">
+            <a href="#">选座购票</a>
+        </div>
+    </div>
+
+    <div class="image col-md-3">
+        <img src="../images/2.jpg" class="photo img-rounded">
+        <div class="ticket">
+            <a href="#">选座购票</a>
+        </div>
+    </div>
+
+    <div class="image col-md-3">
+        <img src="../images/3.jpg" class="photo img-rounded">
+        <div class="ticket">
+            <a href="saleTickets.html">选座购票</a>
+        </div>
+    </div>
+    <h2>今日票房top5</h2>
+    <div class="today col-md-3">
+        <ol class="list-group">
+            <li class="list-group-item"><a href="#" style="color: #000000">速度与激情8</a></li>
+            <li class="list-group-item"><a href="#" style="color: #000000">拆弹专家</a></li>
+            <li class="list-group-item"><a href="#" style="color: #000000">记忆大师</a></li>
+            <li class="list-group-item"><a href="#" style="color: #000000">蓝精灵.寻找神秘村</a></li>
+            <li class="list-group-item"><a href="#" style="color: #000000">喜欢.你</a></li>
+
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="image col-md-3">
+        <img src="../images/4.jpg" class="photo img-rounded">
+        <div class="ticket">
+            <a href="#">选座购票</a>
+        </div>
+    </div>
+
+    <div class="image col-md-3">
+        <img src="../images/5.jpg" class="photo img-rounded">
+        <div class="ticket">
+            <a href="#">选座购票</a>
+        </div>
+    </div>
+
+    <div class="image col-md-3">
+        <img src="../images/6.jpg" class="photo img-rounded">
+        <div class="ticket">
+            <a href="#">选座购票</a>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <h2>更多影片</h2>
+        <form>
+            <div class="find">
+                <input type="text" class="select" placeholder="    搜索关键字">
+
+                <a href="#"><i class="fa fa-search"></i></a>
+
+            </div>
+        </form>
+        <br>
+        <div class="more" >
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#" style="color: #000000">三生三世十里桃花</a></li>
+                <li class="list-group-item"><a href="#" style="color: #000000">异形.契约</a></li>
+                <li class="list-group-item"><a href="#" style="color: #000000">超凡战队</a></li>
+                <li class="list-group-item"><a href="#" style="color: #000000">终结者2.审判日</a></li>
+                <li class="list-group-item"><a href="#" style="color: #000000">战狼2</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<h2>影院环境</h2>
+<div class="card">
+    <div class="introduce">
+        <img src="../images/juyuan.jpg">
+    </div>
+    <div class="contain">
+        <p>云影剧院3D放映厅</p>
+    </div>
+</div>
+<div class="card2">
+    <div class="introduce">
+        <img id="img2" src="../images/juyuan2.jpg">
+    </div>
+    <div class="contain">
+        <p>云影剧院标准放映厅</p>
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="container">
+        <p>关于TOZ 合作伙伴 营销中心 联系客服 开放平台 诚征英才 联系我们 <br/><a href="#" target="_blank"
+                                                       title="#">TOZ</a> - Collect from <a
+                href="#" title="#" target="_blank"> © 2017 TOZ.com 版权所有</a></p>
+    </div>
+</div>
+
+</body>
+</html>
+

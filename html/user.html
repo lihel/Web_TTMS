@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link href="../css/TTMS.css" rel="stylesheet">
+    <link href="../font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+
+        .container {
+            margin: 50px auto;
+        }
+
+        h1 {
+            color: #e42b1f;
+        }
+    </style>
+</head>
+
+<body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="../js/Tabullet.js"></script>
+
+<script>
+    $(function () {
+        var source = [{
+            id: 1,
+            name: "me",
+            level: "123456"
+        }, {
+            id: 2,
+            name: "Alill",
+            level: "111111"
+        }, {
+            id: 101,
+            name: "Aditya Myria",
+            level: "abcdef"
+        }, {
+            id: 102,
+            name: "Lucent Serentia",
+            level: "abcdef"
+        }, {
+            id: 103,
+            name: "Hayden Bapalthiel",
+            level: "abcdef"
+        },];
+
+        function resetTabullet() {
+            $("#table").tabullet({
+                data: source,
+                action: function (mode, data) {
+                    console.dir(mode);
+                    if (mode === 'save') {
+                        source.push(data);
+                    }
+                    if (mode === 'edit') {
+                        for (var i = 0; i < source.length; i++) {
+                            if (source[i].id == data.id) {
+                                source[i] = data;
+                            }
+                        }
+                    }
+                    if (mode == 'delete') {
+                        for (var i = 0; i < source.length; i++) {
+                            if (source[i].id == data) {
+                                source.splice(i, 1);
+                                break;
+                            }
+                        }
+                    }
+                    resetTabullet();
+                }
+            });
+        }
+
+        resetTabullet();
+    });
+</script>
+
+<div class="imgTitle">
+    <img src="../images/yun.png">
+</div>
+
+<div class="nav">
+
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="studio.html">管理演出厅</a></li>
+        <li><a href="operas.html">管理剧目</a></li>
+        <li><a href="plan.html">演出计划</a></li>
+        <li><a href="user.html">管理用户</a></li>
+
+    </ul>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>管理用户</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover" id="table">
+                <thead>
+                <tr data-tabullet-map="id">
+                    <th width="50" data-tabullet-map="_index" data-tabullet-readonly="true">No</th>
+                    <th data-tabullet-map="name">userName</th>
+                    <th data-tabullet-map="level">password</th>
+                    <th width="50" data-tabullet-type="edit"></th>
+                    <th width="50" data-tabullet-type="delete"></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

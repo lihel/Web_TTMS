@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>演出厅管理</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/TTMS.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font: 400 14px/21px Arial, serif
+        }
+
+        .example {
+
+            float: left;
+            width: 40%;
+            margin: 5%
+        }
+
+        table {
+            font-size: 1em;
+            border-collapse: collapse;
+            margin: 0 auto
+        }
+
+        table, td, th {
+            border: 1px solid #999;
+            padding: 8px 16px;
+            text-align: left
+        }
+
+        table.ex-2 {
+            min-width: 100px
+        }
+
+        th {
+            background: #f4f4f4;
+            cursor: pointer
+        }
+
+        th.no-sort, th.no-sort:hover {
+            background: #f4f4f4;
+            cursor: not-allowed
+        }
+
+        p {
+            text-align: center;
+        }
+
+        form {
+            width: 200px;
+            margin: 5%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="imgTitle">
+    <img src="../images/yun.png">
+</div>
+<div class="nav">
+
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="studio.html">管理演出厅</a></li>
+        <li><a href="operas.html">管理剧目</a></li>
+        <li><a href="plan.html">演出计划</a></li>
+        <li><a href="user.html">管理用户</a></li>
+
+    </ul>
+
+</div>
+<h2>
+    -----------------------------------------------------------------------------------------------------------------------------
+</h2>
+<div class="row">
+
+
+    <div class="example ex-1 col-md-6">
+        <p>演出厅信息表</p>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>演出厅ID</th>
+                <th>名称</th>
+                <th>座位数(行*列)</th>
+                <th class="no-sort">管理员</th>
+                <th>删除演出厅</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>001</td>
+                <td>一号演出厅</td>
+                <td>12*10</td>
+                <td data-sort-value="2">Lendjuy</td>
+                <td style="text-align: center">
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>三号演出厅</td>
+                <td>13*12</td>
+                <td data-sort-value="4">Lendjuy</td>
+                <td style="text-align: center">
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>二号演出厅</td>
+                <td>12*10</td>
+                <td data-sort-value="1">Amy</td>
+                <td style="text-align: center">
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>四号演出厅</td>
+                <td>13*12</td>
+                <td data-sort-value="3">Amy</td>
+                <td style="text-align: center">
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <form role="form" class="col-md-4">
+        <div class="form-group">
+            <label for="name"> 输入要添加的演出厅名称</label>
+            <input type="text" class="form-control" id="name"
+                   placeholder="请输入名称">
+        </div>
+
+        <div class="form-group">
+            <label for="seat"> 输入座位数(行*列)</label>
+            <input type="text" class="form-control" id="seat"
+                   placeholder="请输入座位数">
+        </div>
+        <div class="form-group">
+            <label for="studio"> 输入管理员姓名</label>
+            <input type="text" class="form-control" id="studio"
+                   placeholder="请输入管理员姓名">
+        </div>
+        <button type="submit" class="btn btn-primary">确认添加</button>
+    </form>
+</div>
+<script src="../js/jquery-latest.min.js"></script>
+<script src="../js/jquery.tablesort.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var table = $('<table class="ex-2"></table>');
+        table.append('<thead><tr><th class="number">Number</th></tr></thead>');
+        var tbody = $('<tbody></tbody>');
+
+        for (var i = 0; i < 20; i++) {
+            tbody.append('<tr><td>' + Math.floor(Math.random() * 100) + '</td></tr>');
+        }
+        table.append(tbody);
+        $('.example.ex-2').append(table);
+
+        $('table').tablesort().data('tablesort');
+
+        $('thead th.number').data('sortBy', function (th, td, sorter) {
+            return parseInt(td.text(), 10);
+        });
+
+//Sorting indicator example
+        $('table.ex-2').on('tablesort:start', function (event, tablesort) {
+            $('table.ex-2 tbody').addClass("disabled");
+            $('.ex-2 th.number').removeClass("sorted").text('Sorting..');
+        });
+
+        $('table.ex-2').on('tablesort:complete', function (event, tablesort) {
+            $('table.ex-2 tbody').removeClass("disabled");
+            $('.ex-2 th.number').text('Number');
+        });
+    });
+</script>
+<div class="footer">
+    <div class="container">
+        <p>关于TOZ 合作伙伴 营销中心 联系客服 开放平台 诚征英才 联系我们 <br/><a href="#" target="_blank"
+                                                       title="#">TOZ</a> - Collect from <a
+                href="#" title="#" target="_blank"> © 2017 TOZ.com 版权所有</a></p>
+    </div>
+</div>
+</body>
+</html>

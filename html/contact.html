@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>云影剧院</title>
+    <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="all">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/modernizr.custom.63321.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling-->
+    <script type="text/javascript" src="../js/move-top.js"></script>
+    <script type="text/javascript" src="../js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!--//end-smoth-scrolling-->
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="container">
+        <a href="index.html"><img src="../images/yun.png" alt="logo"/></a>
+        <!--top-nav-->
+        <div class="top-nav cl-effect-11">
+            <span class="menu-icon"><img src="../images/menu-icon.png" alt=""/></span>
+            <div class="nav">
+
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="saleTickets.html">售票</a></li>
+                    <li><a href="help.html">帮助</a></li>
+                </ul>
+
+            </div>
+            <!-- script-for-menu -->
+            <script>
+                $("span.menu-icon").click(function () {
+                    $("ul.nav1").slideToggle(500, function () {
+                        // Animation complete.
+                    });
+                });
+            </script>
+            <!-- /script-for-menu -->
+        </div>
+        <!--//top-nav-->
+
+    </div>
+</div>
+
+<h2 style="color: #e42b1f ">
+    ---------------------------------------------------------------------------------------------------------------------------------------------</h2>
+<div class="contact">
+    <div class="container" style="margin-left: auto;margin-right: auto;">
+        <h3>如何联系我们</h3>
+        <div class="map">
+            <img src="../images/map.jpg" alt=""/>
+        </div>
+        <div class="contact-grids">
+            <div class="col-md-4 address">
+                <h3>联系方式 1</h3>
+                <p class="cnt-p">地址：</p>
+                <p>陕西省西安市毛坡村</p>
+
+                <p>电话 : 029-7489756</p>
+                <p>手机 : 12525757758</p>
+                <p>Email : <a href="mailto:example@mail.com">mail@example.com</a></p>
+            </div>
+            <div class="col-md-8 contact-form">
+                <h3>联系方式 2</h3>
+                <form>
+                    <div class="col-md-6 contact-grids">
+                        <input type="text" value="姓名" onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = 'Name';}" required>
+                        <input type="email" value="Email" onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = 'Email';}" required>
+                        <input type="text" value="手机号" onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = 'Telephone';}" required>
+                    </div>
+                    <div class="col-md-6 contact-grids">
+                        <textarea type="text" onfocus="this.value = '';"
+                                  onblur="if (this.value == '') {this.value = 'Message...';}"
+                                  required>正文......</textarea>
+                    </div>
+                    <div class="clearfix"></div>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--//contact-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <p>关于TOZ 合作伙伴 营销中心 联系客服 开放平台 诚征英才 联系我们 <br/><a href="#" target="_blank"
+                                                       title="#">TOZ</a> - Collect from <a
+                href="#" title="#" target="_blank"> © 2017 TOZ.com 版权所有</a></p>
+    </div>
+</div>
+<!--//footer-->
+<!--smooth-scrolling-of-move-up-->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!--//smooth-scrolling-of-move-up-->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
